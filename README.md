@@ -6,6 +6,7 @@ A static site for the Rokda app: home page, privacy policy and a 404 page. Plain
 |---|---|
 | `index.html` | Home page (use as the **app home page** URL) |
 | `privacy.html` | Privacy policy (use as the **privacy policy** URL) |
+| `terms.html` | Terms of service (use as the **terms of service** URL) |
 | `404.html` | Shown by GitHub Pages for a missing page |
 | `styles.css` | All styles, light and dark |
 | `logo.svg`, `icon.png` | Logo and app icon |
@@ -22,6 +23,7 @@ The best choice is a repository named **`<your-github-username>.github.io`**, fo
 
 - Home page: `https://test-name.github.io/`
 - Privacy policy: `https://test-name.github.io/privacy.html`
+- Terms of service: `https://test-name.github.io/terms.html`
 
 Google's sign-in consent screen asks you to prove you own the domain of these pages, and a site at the root is the one you can verify with Google Search Console.
 
@@ -47,5 +49,6 @@ Then on GitHub: **Settings → Pages → Build and deployment → Source: Deploy
 4. In Google Cloud → Google Auth Platform → Branding, add `test-name.github.io` under **Authorized domains**, and set:
    - Application home page: `https://test-name.github.io/`
    - Application privacy policy link: `https://test-name.github.io/privacy.html`
+   - Application terms of service link: `https://test-name.github.io/terms.html`
 
 Use the same privacy policy URL in Play Console → **Policy and programs → App content → Privacy policy**.
