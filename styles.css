@@ -1,0 +1,165 @@
+/* Rokda site. Colours match the app's theme (app/src/theme/index.ts). */
+:root {
+  --coral: #F2665A;      /* brand, money out */
+  --coral-deep: #D94C40;
+  --ink: #2F3654;        /* the app's ink: headers, balance card */
+  --blue: #3B82F6;       /* money in */
+  --page: #F5F5F7;
+  --paper: #FFFFFF;
+  --rule: #E5E7EB;
+  --text: #111827;
+  --dim: #5B6170;
+  --on-ink: #FFFFFF;
+  --display: "Bricolage Grotesque", "Mukta", system-ui, sans-serif;
+  --body: "Mukta", "Hind Vadodara", system-ui, sans-serif;
+  --gujarati: "Hind Vadodara", "Mukta", sans-serif;
+  --measure: 66ch;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ink: #4A5486;
+    --blue: #60A5FA;
+    --coral: #F87F74;
+    --page: #12141B;
+    --paper: #1B1D27;
+    --rule: #2A2D3A;
+    --text: #F3F4F6;
+    --dim: #A3A8B6;
+  }
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--page);
+  color: var(--text);
+  font: 400 1.125rem/1.6 var(--body);
+}
+img, svg { display: block; max-width: 100%; }
+a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+a:hover { color: var(--coral); }
+:focus-visible { outline: 3px solid var(--coral); outline-offset: 3px; border-radius: 4px; }
+.wrap { width: min(1120px, 100% - 32px); margin-inline: auto; }
+.skip { position: absolute; left: -999px; }
+.skip:focus { left: 16px; top: 16px; background: var(--paper); padding: 8px 12px; z-index: 10; }
+
+/* Top bar */
+.top { display: flex; align-items: center; justify-content: space-between; padding-block: 20px; }
+.brand { display: flex; align-items: center; gap: 10px; font: 700 1.25rem/1 var(--display); text-decoration: none; }
+.brand img { width: 36px; height: 36px; }
+.top nav { display: flex; gap: 20px; font-size: 1rem; }
+.top nav a { text-decoration: none; color: var(--dim); }
+.top nav a:hover { color: var(--text); }
+
+/* Hero: the name in three scripts, beside a page of the diary */
+.hero { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 48px; align-items: center; padding-block: 48px 88px; }
+.wordmark { margin: 0; font: 800 clamp(4rem, 13vw, 9.5rem)/0.86 var(--display); letter-spacing: -0.045em; color: var(--ink); }
+@media (prefers-color-scheme: dark) { .wordmark { color: var(--text); } }
+.scripts { display: flex; gap: 20px; margin: 14px 0 28px; font-size: clamp(1.5rem, 3.4vw, 2.25rem); line-height: 1.2; color: var(--coral); }
+.scripts .gu { font-family: var(--gujarati); }
+.lede { margin: 0 0 28px; max-width: 30ch; font: 600 clamp(1.4rem, 2.6vw, 1.9rem)/1.25 var(--display); letter-spacing: -0.01em; }
+.sub { margin: 0 0 32px; max-width: 46ch; color: var(--dim); }
+.get { display: inline-flex; align-items: center; gap: 12px; min-height: 52px; padding: 12px 22px; border-radius: 14px; background: var(--ink); color: var(--on-ink); font-weight: 600; text-decoration: none; }
+.get:hover { color: var(--on-ink); background: var(--coral-deep); }
+.get[aria-disabled="true"] { cursor: default; }
+.get[aria-disabled="true"]:hover { background: var(--ink); }
+.get small { display: block; font-weight: 400; opacity: 0.75; font-size: 0.85rem; line-height: 1.1; }
+
+/* The diary page */
+.diary { margin: 0; background: var(--paper); border-radius: 28px; padding: 24px; box-shadow: 0 30px 60px -30px rgba(47, 54, 84, 0.35); border: 1px solid var(--rule); }
+.diary-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px; }
+.diary-head strong { font: 700 1.15rem/1.2 var(--display); }
+.diary-head span { color: var(--dim); font-size: 0.95rem; }
+.balance { background: var(--ink); color: var(--on-ink); border-radius: 18px; padding: 16px 18px; margin: 12px 0 16px; }
+.balance span { opacity: 0.75; font-size: 0.95rem; }
+.balance b { display: block; font: 800 2rem/1.1 var(--display); font-variant-numeric: tabular-nums; letter-spacing: -0.02em; }
+.entries { list-style: none; margin: 0; padding: 0; }
+.entries li { display: grid; grid-template-columns: 40px 1fr auto; gap: 12px; align-items: center; padding: 10px 0; border-top: 1px solid var(--rule); }
+.entries .dot { width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; font-size: 1.1rem; background: var(--page); }
+.entries .what { line-height: 1.25; }
+.entries .what small { display: block; color: var(--dim); font-size: 0.85rem; }
+.entries .amt { font-weight: 700; font-variant-numeric: tabular-nums; }
+.out { color: var(--coral); }
+.in { color: var(--blue); }
+.diary-foot { margin: 14px 0 0; color: var(--dim); font-size: 0.9rem; display: flex; align-items: center; gap: 8px; }
+.diary-foot svg { flex: none; }
+
+/* One entrance only: the day's entries are written in, one after another. */
+@media (prefers-reduced-motion: no-preference) {
+  .entries li { opacity: 0; transform: translateY(6px); animation: write 0.45s cubic-bezier(0.2, 0, 0, 1) forwards; }
+  .entries li:nth-child(1) { animation-delay: 0.3s; }
+  .entries li:nth-child(2) { animation-delay: 0.7s; }
+  .entries li:nth-child(3) { animation-delay: 1.1s; }
+  .entries li:nth-child(4) { animation-delay: 1.5s; }
+  @keyframes write { to { opacity: 1; transform: none; } }
+}
+
+/* Sections */
+.band { background: var(--paper); border-block: 1px solid var(--rule); }
+section { padding-block: 80px; }
+h2 { margin: 0 0 16px; font: 700 clamp(1.9rem, 4vw, 2.75rem)/1.1 var(--display); letter-spacing: -0.02em; max-width: 22ch; }
+h3 { margin: 0 0 6px; font: 700 1.25rem/1.25 var(--display); }
+.intro { margin: 0 0 40px; max-width: 56ch; color: var(--dim); }
+p { margin: 0 0 1em; }
+
+/* Promise: plain statements, not cards */
+.promise { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0 56px; margin: 0; padding: 0; list-style: none; }
+.promise li { padding: 22px 0; border-top: 2px solid var(--text); }
+.promise p { color: var(--dim); max-width: 44ch; margin: 0; }
+
+/* Backup choices: a real order, from simplest to automatic */
+.ways { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; counter-reset: way; list-style: none; margin: 0; padding: 0; }
+.ways li { background: var(--page); border-radius: 20px; padding: 26px 24px; }
+.ways .tag { display: inline-block; margin-bottom: 14px; padding: 2px 10px; border-radius: 999px; background: var(--coral); color: #fff; font-size: 0.85rem; font-weight: 600; }
+.ways p { color: var(--dim); margin: 0; }
+.keynote { margin: 32px 0 0; padding: 18px 22px; border-left: 4px solid var(--coral); background: var(--page); border-radius: 0 14px 14px 0; max-width: 70ch; }
+
+/* What it does: a simple two-column list */
+.does { columns: 2 320px; column-gap: 56px; margin: 0; padding: 0; list-style: none; }
+.does li { break-inside: avoid; padding: 0 0 22px; }
+.does p { margin: 0; color: var(--dim); }
+
+/* FAQ */
+.faq { max-width: 760px; }
+.faq details { border-top: 1px solid var(--rule); padding: 18px 0; }
+.faq details:last-child { border-bottom: 1px solid var(--rule); }
+.faq summary { cursor: pointer; font: 600 1.2rem/1.35 var(--display); list-style: none; display: flex; justify-content: space-between; gap: 16px; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; color: var(--coral); font-size: 1.5rem; line-height: 1; transition: transform 0.2s; }
+.faq details[open] summary::after { transform: rotate(45deg); }
+.faq details p { margin: 12px 0 0; color: var(--dim); max-width: var(--measure); }
+
+/* Footer */
+footer { padding-block: 40px 56px; color: var(--dim); font-size: 1rem; }
+footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; }
+footer nav { display: flex; flex-wrap: wrap; gap: 20px; }
+
+/* Privacy policy page */
+.doc { max-width: var(--measure); padding-block: 32px 80px; }
+.doc h1 { margin: 0 0 8px; font: 800 clamp(2.25rem, 6vw, 3.5rem)/1.05 var(--display); letter-spacing: -0.03em; }
+.doc .date { color: var(--dim); margin: 0 0 32px; }
+.doc h2 { font-size: 1.6rem; margin-top: 48px; max-width: none; }
+.doc .summary { background: var(--paper); border: 1px solid var(--rule); border-radius: 20px; padding: 22px 26px; }
+.doc .summary ul { margin: 0; padding-left: 1.2em; }
+.doc li { margin-bottom: 8px; }
+.doc table { width: 100%; border-collapse: collapse; font-size: 1rem; margin: 8px 0 16px; }
+.doc th, .doc td { text-align: left; vertical-align: top; padding: 10px 12px 10px 0; border-bottom: 1px solid var(--rule); }
+.doc th { font-weight: 600; }
+.doc code { font-size: 0.9em; overflow-wrap: anywhere; }
+
+@media (max-width: 860px) {
+  .hero { grid-template-columns: 1fr; gap: 40px; padding-block: 24px 64px; }
+  .promise { grid-template-columns: 1fr; }
+  .ways { grid-template-columns: 1fr; }
+  section { padding-block: 56px; }
+}
+@media (max-width: 480px) {
+  .top nav { gap: 14px; font-size: 0.95rem; }
+  .diary { padding: 18px; border-radius: 22px; }
+  .doc table, .doc thead, .doc tbody, .doc tr, .doc th, .doc td { display: block; }
+  .doc thead { display: none; }
+  .doc td { padding: 4px 0; border: 0; }
+  .doc tr { padding: 10px 0; border-bottom: 1px solid var(--rule); }
+  .doc td:first-child { font-weight: 600; }
+}

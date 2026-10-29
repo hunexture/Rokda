@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rokda: Daily Money Diary</title>
+  <meta name="description" content="Rokda is a private money diary for Android. It works offline, keeps your records encrypted on your phone, and backs up to your own Google Drive or any cloud you choose.">
+  <!-- Google Search Console: paste your verification tag here to prove you own this site (needed for the Google sign-in consent screen). -->
+  <!-- <meta name="google-site-verification" content="PASTE-CODE-HERE"> -->
+  <meta property="og:title" content="Rokda: Daily Money Diary">
+  <meta property="og:description" content="A private, offline money diary for Android. Your records stay on your phone.">
+  <meta property="og:image" content="icon.png">
+  <meta name="theme-color" content="#F2665A">
+  <link rel="icon" href="logo.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Hind+Vadodara:wght@400;600&family=Mukta:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="wrap top">
+    <a class="brand" href="./"><img src="logo.svg" alt="" width="36" height="36">Rokda</a>
+    <nav aria-label="Main">
+      <a href="#backup">Backup</a>
+      <a href="#faq">Questions</a>
+      <a href="privacy.html">Privacy</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <div class="wrap hero">
+      <div>
+        <h1 class="wordmark">Rokda</h1>
+        <p class="scripts" lang="hi"><span>रोकड़</span><span class="gu" lang="gu">રોકડ</span></p>
+        <p class="lede">Your daily money diary, kept on your phone and nowhere else.</p>
+        <p class="sub">Write down what came in and what went out. Rokda works without internet, needs no account, and keeps every record encrypted. When you want a backup, it goes to your own cloud.</p>
+        <!-- When the app is live, change this to: <a class="get" href="https://play.google.com/store/apps/details?id=com.rokda.app"> and remove aria-disabled. -->
+        <a class="get" aria-disabled="true" role="link">
+          <svg width="22" height="24" viewBox="0 0 22 24" aria-hidden="true"><path fill="currentColor" d="M1 1.3v21.4c0 .4.4.6.7.4l12-10.7c.2-.2.2-.6 0-.8L1.7.9C1.4.7 1 .9 1 1.3Zm14.2 9.2L3.7.4l13.8 7.9-2.3 2.2Zm0 3 2.3 2.2L3.7 23.6l11.5-10.1Zm3.9-4.3 2.4 1.4c.7.4.7 1 0 1.4l-2.4 1.4-2.6-2.1 2.6-2.1Z"/></svg>
+          <span>Coming soon<small>on Google Play</small></span>
+        </a>
+      </div>
+
+      <figure class="diary" aria-label="Example of a day in Rokda">
+        <div class="diary-head"><strong>Today</strong><span>Wed, 29 Oct</span></div>
+        <div class="balance"><span>Total balance</span><b>₹48,240</b></div>
+        <ol class="entries">
+          <li><span class="dot" aria-hidden="true">☕</span><span class="what">Chai with Ravi<small>Cash</small></span><span class="amt out">−₹20</span></li>
+          <li><span class="dot" aria-hidden="true">🛺</span><span class="what">Auto to office<small>UPI</small></span><span class="amt out">−₹60</span></li>
+          <li><span class="dot" aria-hidden="true">💼</span><span class="what">Salary<small>Bank</small></span><span class="amt in">+₹32,000</span></li>
+          <li><span class="dot" aria-hidden="true">🥦</span><span class="what">Sabzi<small>Cash</small></span><span class="amt out">−₹180</span></li>
+        </ol>
+        <figcaption class="diary-foot">
+          <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a5 5 0 0 0-5 5v3H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2h-1V7a5 5 0 0 0-5-5Zm-3 8V7a3 3 0 0 1 6 0v3H9Z"/></svg>
+          Encrypted on this phone. Works in airplane mode.
+        </figcaption>
+      </figure>
+    </div>
+
+    <div class="band">
+      <section class="wrap" aria-labelledby="promise-h">
+        <h2 id="promise-h">Your records are yours</h2>
+        <p class="intro">Rokda has no server. We never see your money, your entries or your name, because none of it ever reaches us.</p>
+        <ul class="promise">
+          <li><h3>No account, no sign-up</h3><p>Open the app and start writing. There is nothing to register and no password to remember for us.</p></li>
+          <li><h3>Works offline</h3><p>Every screen works without internet. Only a Google Drive backup needs a connection, and only when you ask for one.</p></li>
+          <li><h3>Encrypted on your phone</h3><p>Your records and receipt photos are stored encrypted. A PIN or your fingerprint keeps them closed to anyone who picks up your phone.</p></li>
+          <li><h3>No ads, no tracking</h3><p>Rokda contains no analytics, no advertising and no tracking of any kind.</p></li>
+        </ul>
+      </section>
+    </div>
+
+    <section class="wrap" id="backup" aria-labelledby="backup-h">
+      <h2 id="backup-h">Back up to your own cloud</h2>
+      <p class="intro">Lose your phone, keep your records. Every backup is locked with a password only you know before it leaves the phone.</p>
+      <ol class="ways">
+        <li><span class="tag">Any cloud</span><h3>Save a backup file</h3><p>Tap Back up now and save one encrypted file to Google Drive, OneDrive, Dropbox, email, or a computer. Your choice.</p></li>
+        <li><span class="tag">Google Drive</span><h3>Connect your Drive</h3><p>Sign in with your own Google account. Rokda makes one folder, Rokda Backups, and can see nothing else in your Drive.</p></li>
+        <li><span class="tag">Automatic</span><h3>Daily auto-backup</h3><p>Turn it on and Rokda backs up to your Drive once a day, on Wi-Fi only, when you open the app.</p></li>
+      </ol>
+      <p class="keynote"><strong>Keep your backup password safe.</strong> Without it, nobody can open your backup, not Google and not us. That is what keeps it private, and it is also why we cannot reset it for you.</p>
+    </section>
+
+    <div class="band">
+      <section class="wrap" aria-labelledby="does-h">
+        <h2 id="does-h">Everything a money diary needs</h2>
+        <p class="intro">Simple enough for a quick ₹20 chai, detailed enough for the whole household.</p>
+        <ul class="does">
+          <li><h3>Add an entry in seconds</h3><p>Plus, Money Out, amount, category, Save.</p></li>
+          <li><h3>See where it went</h3><p>Daily, weekly and monthly views, a calendar, and charts by category.</p></li>
+          <li><h3>Budgets</h3><p>Set a monthly limit and see how much is left before the month ends.</p></li>
+          <li><h3>Accounts and people</h3><p>Cash, bank and UPI accounts, and who owes whom.</p></li>
+          <li><h3>Repeating entries</h3><p>Rent, EMIs and subscriptions add themselves on the right day.</p></li>
+          <li><h3>Receipts</h3><p>Attach a photo or a PDF to any entry.</p></li>
+          <li><h3>Export</h3><p>Share a PDF statement or a CSV file for a spreadsheet.</p></li>
+          <li><h3>Your language</h3><p>English, हिन्दी and <span lang="gu" style="font-family: var(--gujarati)">ગુજરાતી</span>, with light and dark themes.</p></li>
+        </ul>
+      </section>
+    </div>
+
+    <section class="wrap" id="faq" aria-labelledby="faq-h">
+      <h2 id="faq-h">Questions</h2>
+      <div class="faq">
+        <details>
+          <summary>Is Rokda free?</summary>
+          <p>Yes. There are no ads and no paid features.</p>
+        </details>
+        <details>
+          <summary>Does Rokda read my SMS or connect to my bank?</summary>
+          <p>No. You write your entries yourself. Rokda never asks for SMS access or bank logins.</p>
+        </details>
+        <details>
+          <summary>What happens if I lose my phone?</summary>
+          <p>Install Rokda on your new phone, then restore from your backup file or connect the same Google account. Type your backup password and everything comes back, including receipts.</p>
+        </details>
+        <details>
+          <summary>Can Rokda see my other Google Drive files?</summary>
+          <p>No. Rokda asks Google only for access to files it creates itself. It cannot see, open or change anything else in your Drive.</p>
+        </details>
+        <details>
+          <summary>How do I delete my data?</summary>
+          <p>In the app, go to Settings and choose Delete all data. To remove Drive backups, delete the Rokda Backups folder in your Google Drive. Uninstalling the app also removes everything stored on the phone.</p>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>© 2026 Rokda</span>
+      <nav aria-label="Footer">
+        <a href="privacy.html">Privacy policy</a>
+        <!-- Change to your support email address -->
+        <a href="mailto:uttampipliya4@gmail.com">Contact</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>
